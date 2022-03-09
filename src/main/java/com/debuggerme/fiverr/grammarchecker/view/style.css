@@ -1,0 +1,46 @@
+.text-field {
+    -fx-prompt-text-fill: white;
+    -fx-font-weight: bold;
+}
+
+.button-save {
+    -fx-background-color: #ffffff;
+    -fx-border-color: #0d9035;
+    -fx-text-fill: #0d9035;
+    -fx-background-radius: 5px;
+    -fx-border-radius: 5px;
+    -fx-border-width: 3px;
+    -fx-font-family: Calibri;
+    -fx-font-weight: bold;
+    -fx-font-size: 20px;
+}
+
+.button-save:hover {
+    -fx-background-color: #0d9035;
+    -fx-border-color: #0d9035;
+    -fx-text-fill: white;
+    -fx-background-radius: 5px;
+    -fx-border-radius: 5px;
+    -fx-border-width: 1px;
+}
+
+.button-search {
+    -fx-background-color: #ffffff;
+    -fx-border-color: #538eff;
+    -fx-text-fill: #538eff;
+    -fx-background-radius: 5px;
+    -fx-border-radius: 5px;
+    -fx-border-width: 1px;
+    -fx-font-family: Calibri;
+    -fx-font-weight: bold;
+    -fx-font-size: 14px;
+}
+
+.button-search:hover {
+    -fx-background-color: #538eff;
+    -fx-border-color: #538eff;
+    -fx-text-fill: white;
+    -fx-background-radius: 5px;
+    -fx-border-radius: 5px;
+    -fx-border-width: 1px;
+}
