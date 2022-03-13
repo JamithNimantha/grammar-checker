@@ -108,6 +108,7 @@ public class MainController implements Initializable {
             @Override
             protected Void call() throws Exception {
                 AtomicInteger index = new AtomicInteger(1);
+                Platform.runLater(() -> lblProgress.setText("Completed 0 of " + files.length));
                 for (File file : Objects.requireNonNull(files)) {
                     try {
                         String text = FileUtils.readFileToString(file, StandardCharsets.UTF_8); // Use Charset.forName("windows-1252") If Encoding does not work correctly
@@ -132,6 +133,7 @@ public class MainController implements Initializable {
                         "Successfully Checked and Fixed Grammar!"
                 );
                 loading(false);
+                GrammarChecker.quitWebDriver();
                 return null;
             }
         };
