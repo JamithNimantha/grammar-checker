@@ -12,8 +12,8 @@
     <description>Bulk Grammar Checker And Fixer Tool</description>
 
     <properties>
-        <maven.compiler.source>8</maven.compiler.source>
-        <maven.compiler.target>8</maven.compiler.target>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <start-class>com.debuggerme.fiverr.grammarchecker.App</start-class>
     </properties>
@@ -43,14 +43,14 @@
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>2.3.2</version>
                 <configuration>
-                    <source>${java.version}</source>
-                    <target>${java.version}</target>
+                    <source>1.8</source>
+                    <target>1.8</target>
                 </configuration>
             </plugin>
             <plugin>
                 <artifactId>maven-assembly-plugin</artifactId>
                 <configuration>
-                    <finalName>Bulk Article Rewriter ${project.version}</finalName>
+                    <finalName>Grammar Checker And Fixer Tool ${project.version}</finalName>
                     <archive>
                         <manifest>
                             <addClasspath>true</addClasspath>
