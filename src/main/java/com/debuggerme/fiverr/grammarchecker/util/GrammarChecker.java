@@ -15,6 +15,7 @@ import java.awt.datatransfer.DataFlavor;
 import java.awt.datatransfer.StringSelection;
 import java.awt.datatransfer.UnsupportedFlavorException;
 import java.io.IOException;
+import java.time.Duration;
 import java.util.Random;
 import java.util.concurrent.TimeUnit;
 
@@ -77,7 +78,19 @@ public class GrammarChecker {
             Thread.sleep(random(6000, 8000));
         } catch (InterruptedException ignored) {
         }
-        WebElement element = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html/body/div[1]/div[2]/div[3]/div/div/div[1]/div/div/div[1]/div/div[3]/div/div[2]/div/button")));
+        try {
+            WebDriverWait suspiciousWait = new WebDriverWait(DRIVER_INSTANCE, Duration.ofSeconds(2).getSeconds());
+            WebElement suspicious = suspiciousWait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("/html/body/div[5]/div[3]/div/div[2]/button")));
+            if (suspicious.isEnabled()){
+                suspicious.click();
+            }
+        } catch (Exception ignored) {
+        }
+        try {
+            Thread.sleep(random(3000, 5000));
+        } catch (InterruptedException ignored) {
+        }
+        WebElement element = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html/body/div[1]/div[2]/div[3]/div[1]/div/div/div[1]/div/div/div[1]/div/div[3]/div/div[2]/div/button")));
         try {
             Thread.sleep(random(6000, 8000));
         } catch (InterruptedException ignored) {
@@ -87,7 +100,7 @@ public class GrammarChecker {
             Thread.sleep(random(6000, 8000));
         } catch (InterruptedException ignored) {
         }
-        element = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html/body/div[1]/div[2]/div[3]/div/div/div[1]/div/div/div[1]/div/div[3]/div/div[3]/div/div[3]/div/button")));
+        element = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html/body/div[1]/div[2]/div[3]/div[1]/div/div/div[1]/div/div/div[1]/div/div[3]/div/div[3]/div/div[3]/div/button")));
         try {
             Thread.sleep(random(2000, 4000));
         } catch (InterruptedException ignored) {
@@ -97,12 +110,12 @@ public class GrammarChecker {
             Thread.sleep(random(2000, 4000));
         } catch (InterruptedException ignored) {
         }
-        DRIVER_INSTANCE.findElement(By.xpath("/html/body/div[1]/div[2]/div[3]/div/div/div[1]/div/div/div[1]/div/div[1]/div[1]/div[4]/div/div/button")).click();
+        DRIVER_INSTANCE.findElement(By.xpath("/html/body/div[1]/div[2]/div[3]/div[1]/div/div/div[1]/div/div/div[1]/div/div[1]/div[1]/div[4]/div/div/button")).click();
         try {
             Thread.sleep(random(5000, 7000));
         } catch (InterruptedException ignored) {
         }
-        WebElement clearTextElement = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("/html/body/div[4]/div[3]/div/div[3]/button")));
+        WebElement clearTextElement = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("/html/body/div[4]/div[3]/div/div[2]/button")));
         clearTextElement.click();
         try {
             Thread.sleep(random(1000, 2000));
